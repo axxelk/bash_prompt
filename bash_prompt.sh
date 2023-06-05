@@ -1,4 +1,4 @@
-# root@f36:/etc/profile.d $ cat bash_prompt.sh
+#!/bin/sh
 
 txtblk='\[\033[0;30m\]' # Black - Regular
 txtred='\[\033[0;31m\]' # Red
