@@ -34,6 +34,13 @@ bakcyn='\[\033[46m\]'   # Cyan
 bakwht='\[\033[47m\]'   # White
 txtrst='\[\033[0m\]'    # Text Reset
 
+
+gitprmpt='$(__git_ps1 "(%s)")'  # you need bash_prompt.sh from git sourced
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+
+
 # user which get this prompt configuration
 promptuserlist="root lnx axelk"
 xlogname=$(logname)
@@ -42,11 +49,11 @@ userisin=$(echo $promptuserlist|grep -w -q $xlogname && echo "true" || echo "fal
 promptfunction ()
 {
     if [ "$USER" = "root" ]; then
-        export PS1="${bldred}\u${bldwht}@\h:\w \\$ ${txtrst}";
+        export PS1="${bldred}\u${bldwht}@\h:\w ${txtcyn}${gitprmpt}${bldred} \\$ ${txtrst}";
     elif [ "$USER" = "lnx" ]; then
-        export PS1="${bldylw}\u${bldwht}@\h:\w \\$ ${txtrst}";
+        export PS1="${bldylw}\u${bldwht}@\h:\w ${txtcyn}${gitprmpt}${bldylw}\\$ ${txtrst}";
     else
-        export PS1="${bldgrn}\u${bldwht}@\h:\w \\$ ${txtrst}";
+        export PS1="${bldgrn}\u${bldwht}@\h:\w ${txtcyn}${gitprmpt}${bldgrn}\\$ ${txtrst}";
     fi
 }
 
