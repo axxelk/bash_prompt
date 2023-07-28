@@ -34,8 +34,19 @@ bakcyn='\[\033[46m\]'   # Cyan
 bakwht='\[\033[47m\]'   # White
 txtrst='\[\033[0m\]'    # Text Reset
 
+GITPROMPT=/etc/profile.d/git-prompt.bash
 
-gitprmpt='$(__git_ps1 "(%s)")'  # you need bash_prompt.sh from git sourced
+if [ -f "$GITPROMPT" ]; then
+  source $GITPROMPT
+fi
+
+if [ "$(type -t __git_ps1)" == function ]; then
+  gitprmpt='$(__git_ps1 "(%s)")'
+else
+  gitprmpt=""
+fi
+
+# gitprmpt='$(__git_ps1 "(%s)")'  # you need bash_prompt.sh from git sourced
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
