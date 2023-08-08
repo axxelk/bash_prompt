@@ -7,8 +7,10 @@ Prompt changes color of root user to red
 
 put it in /etc/profile.d/
 You may want git-prompt.bash for a git sensitive prompt:
+```
 curl https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > /etc/profile.d/git-prompt.bash
 curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash > /etc/profile.d/git-completion.bash
+```
 
 ## Information
 
