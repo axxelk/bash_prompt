@@ -10,6 +10,8 @@ You may want git-prompt.bash for a git sensitive prompt:
 ```
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh        > /etc/profile.d/git-prompt.bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash  > /etc/profile.d/git-completion.bash
+
+curl https://raw.githubusercontent.com/axxelk/bash_prompt/refs/heads/main/bash_prompt.sh  > /etc/profile.d/bash_prompt.sh
 ```
 
 ## Information
